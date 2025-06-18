@@ -82,3 +82,11 @@ desktop.ini
 # JetBrains Rider and WebStorm junk
 .idea/
 *.iml
+/.vs/ProjectEvaluation
+/.vs/ShortLinkBackend/v17/TestStore/0
+/.vs/ShortLinkBackend/v17/.futdcache.v2
+/.vs/ShortLinkBackend/v17/DocumentLayout.backup.json
+/.vs/ShortLinkBackend/v17/DocumentLayout.json
+/.vs/ShortLinkBackend/FileContentIndex
+/.vs/ShortLinkBackend/DesignTimeBuild
+/.vs/ShortLinkBackend/config
