@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using ShortLinkBackend.ShortLinkDbContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,11 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<ShortUrlDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConntection"));
+});
 
 var app = builder.Build();
 
