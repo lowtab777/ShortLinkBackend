@@ -7,7 +7,7 @@ namespace ShortLinkBackend.Interfaces
         Task<User?> GetUserByIdAsync(int id);
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User?> AuthenticateUserAsync(string name, string password);
-
+        Task<User?> AddUserAsync(string name, string password);
 
     }
 }

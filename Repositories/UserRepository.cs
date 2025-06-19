@@ -13,9 +13,9 @@ namespace ShortLinkBackend.Repositories
         {
             _context = context;
         }
-        public async Task AddUserAsync(User user)
+        public async Task<User?> AddUserAsync(User user)
         {
-            await _context.Users.AddAsync(user);
+            return  (await _context.Users.AddAsync(user)).Entity;
         }
 
         public void UpdateUser(User user)

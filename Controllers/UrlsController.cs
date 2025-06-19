@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ShortLinkBackend.Controllers
@@ -8,24 +9,28 @@ namespace ShortLinkBackend.Controllers
     public class UrlsController : ControllerBase
     {
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult GetAllUrls()
         {
             return Ok();
         }
 
-        [HttpGet]
+        [HttpGet("/:id")]
+        [Authorize(Roles = "User")]
         public IActionResult GetUrlById(int id)
         {
             return Ok();
         }
 
         [HttpPost]
+        [Authorize(Roles = "User")]
         public IActionResult CreateNewUrl()
         {
             return Ok();
         }
 
         [HttpDelete]
+        [Authorize(Roles ="Admin")]
         public IActionResult DeleteUrl()
         {
             return Ok();
