@@ -5,21 +5,33 @@ namespace ShortLinkBackend.Services
 {
     public class UserService : IUserService
     {
-        public UserService() { }
-
-        public Task<User?> AuthenticateUserAsync(string name, string password)
+        private readonly IUserRespository _userRespository;
+        public UserService(IUserRespository userRespository) 
         {
-            throw new NotImplementedException();
+            _userRespository = userRespository;
         }
 
-        public Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<User?> AuthenticateUserAsync(string name, string password)
         {
-            throw new NotImplementedException();
+            return await _userRespository.GetUserByNameAsync(name);
         }
 
-        public Task<User?> GetUserByIdAsync(int id)
+        public async Task<User?> AddUserAsync(string name, string password)
         {
-            throw new NotImplementedException();
+            var user = new User() {Name = name, PasswordHash = password, Role = "User" };
+            var createdUser = await _userRespository.AddUserAsync(user);
+            await _userRespository.SaveChangesAsync();
+            return createdUser;
+        }
+
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        {
+            return await _userRespository.GetAllUsersAsync();
+        }
+
+        public async Task<User?> GetUserByIdAsync(int id)
+        {
+            return await _userRespository.GetUserByIdAsync(id);
         }
     }
 }
