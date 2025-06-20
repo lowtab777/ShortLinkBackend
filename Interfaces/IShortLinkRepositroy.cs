@@ -14,5 +14,7 @@ namespace ShortLinkBackend.Interfaces
         void DeleteLink(ShortLink link);
 
         Task SaveChangesAsync();
+
+        Task<bool> ExistsByShortUrlAsync(string shortCode);
     }
 }
