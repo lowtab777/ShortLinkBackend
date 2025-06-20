@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLinkBackend", "ShortLinkBackend.csproj", "{AF4990FF-2E88-4356-AF07-2F185D7C3944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLinkBackend.Tests", "..\ShortLink.Tests\ShortLinkBackend.Tests.csproj", "{04E4149C-DDFA-4247-9829-0B4A84049BC6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AF4990FF-2E88-4356-AF07-2F185D7C3944} = {AF4990FF-2E88-4356-AF07-2F185D7C3944}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{AF4990FF-2E88-4356-AF07-2F185D7C3944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF4990FF-2E88-4356-AF07-2F185D7C3944}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF4990FF-2E88-4356-AF07-2F185D7C3944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E4149C-DDFA-4247-9829-0B4A84049BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E4149C-DDFA-4247-9829-0B4A84049BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E4149C-DDFA-4247-9829-0B4A84049BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E4149C-DDFA-4247-9829-0B4A84049BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

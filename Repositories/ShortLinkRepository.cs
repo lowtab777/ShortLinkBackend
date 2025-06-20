@@ -42,9 +42,15 @@ namespace ShortLinkBackend.Repositories
             return await _context.ShortLinks.FirstOrDefaultAsync(s => s.LongUrl == longUrl);
         }
 
+        public async Task<bool> ExistsByShortUrlAsync(string shortCode)
+        {
+            return await _context.ShortLinks.AnyAsync(l => l.ShortUrl == shortCode);
+        }
+
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
         }
+
     }
 }

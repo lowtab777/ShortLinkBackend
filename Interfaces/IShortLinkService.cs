@@ -6,9 +6,10 @@ namespace ShortLinkBackend.Interfaces
     {
         Task<IEnumerable<ShortLink>> GetAllLinksAsync();
         Task<ShortLink?> GetByIdAsync(int id);
-        Task<IEnumerable<ShortLink>> GetByUserAsync(int userId);
         Task<ShortLink> CreateShortLinkAsync(string longUrl, int userId);
+        Task<ShortLink?> UpdateShortLinkAsync(ShortLink shortLink);
 
-        Task DeleteAsync(int id);
+        Task DeleteAsync(ShortLink shortLink);
+        Task<bool> DeleteByIdAsync(int id);
     }
 }
